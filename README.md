@@ -150,7 +150,7 @@ https://ollama.com/download
 After installing, open PowerShell:
 
 ```powershell
-ollama pull llama3.2:3b
+ollama pull llama3.2:1b
 ollama serve
 ```
 
@@ -159,19 +159,19 @@ If `ollama serve` says Ollama is already running, that is fine.
 Then restart the backend and ask a question again. The API response will show:
 
 ```text
-model_used : ollama:llama3.2:3b
+model_used : ollama:llama3.2:1b
 ```
 
-If your laptop has low RAM, try a smaller model:
+If your laptop has more RAM and you want better answers, you can try a larger model later:
 
 ```powershell
-ollama pull qwen2.5:1.5b
+ollama pull llama3.2:3b
 ```
 
 Then set the model before starting the backend:
 
 ```powershell
-$env:OLLAMA_MODEL="qwen2.5:1.5b"
+$env:OLLAMA_MODEL="llama3.2:3b"
 python -m app.main
 ```
 
@@ -290,4 +290,3 @@ Why this is free:
 ```text
 Instead of paid OpenAI APIs, I used Ollama for local open-source models. Instead of paid AKS deployment, I added Docker and Kubernetes manifests that can run locally or be adapted later for cloud deployment.
 ```
-
